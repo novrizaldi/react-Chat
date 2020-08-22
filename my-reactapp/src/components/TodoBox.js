@@ -34,7 +34,7 @@ export default class TodoBox extends React.Component {
     addTodo(name, message){
         const id = Date.now()
         this.setState((state, props) => ({
-            data : [{id, name, message, sent: true}, ...state.data]
+            data : [...state.data, {id, name, message, sent: true}]
         }))
 
         request.post('chats', {
@@ -86,9 +86,13 @@ export default class TodoBox extends React.Component {
 
     render(){
         return (
-            <div>
+            <div className="container">
+            <div className="row mt-5">
+            <div className="col-md-6 offset-md-3 col-sm-6 offset-sm-3 col-12 comments-main pt-4 rounded">
             <TodoForm add = {this.addTodo}/>
-            <TodoList data={this.state.data} remove= {this.removeTodo} resendTodo = {this.resendTodo}/>
+            <TodoList data={this.state.data} remove= {this.removeTodo} resend = {this.resendTodo}/>
+            </div>
+            </div>
             </div>
         )
     }
