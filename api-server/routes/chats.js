@@ -2,18 +2,21 @@ var express = require('express');
 var router = express.Router();
 var Chats = require ('../models/Chats');
 const { response } = require('../app');
+const moment = require('moment');
 
 //================GET===================
 router.get('/', function (req, res) {
     let response = [];
     
-    Chats.find({})
+    Chats.find().sort({ createdAt : 1})
     .then(data => {
         response = data.map(item => {
             return {
             id : item.id,
             name : item.name,
-            message : item.message
+            message : item.message,
+            date: moment(item.createdAt).format("YYYY-MM-DD"),
+            time: moment(item.createdAt).format('h:mm a')
             }
         })  
         res.status(200).json(response);

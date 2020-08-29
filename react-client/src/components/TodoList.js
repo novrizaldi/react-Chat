@@ -10,6 +10,7 @@ export default function TodoList (props){
                     message={item.message} 
                     sent = {item.sent}
                     index = {index}
+                    time={item.time}
                     hapus={ () => props.remove(item.id)}
                     resend={ () => props.resend(item.id, item.name, item.message)} /> )
     return (

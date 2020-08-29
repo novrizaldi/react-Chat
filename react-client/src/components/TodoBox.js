@@ -3,6 +3,7 @@ import TodoForm from './TodoForm'
 import TodoList from './TodoList'
 import axios from 'axios'
 import io from 'socket.io-client'
+import moment from 'moment'
 
 var socket = io.connect('http://localhost:3001/')
 
@@ -24,10 +25,11 @@ export default class TodoBox extends React.Component {
     componentDidMount(){
         this.loadChat()
 
+        const time = moment().format('h:mm a')
         socket.on('chat', function (data) {
             // console.log('DID MOUNT', data)
             this.setState((state, props) => (
-                {data: [...state.data, { ...data, sent: true }]
+                {data: [...state.data, { ...data, time, sent: true }]
             }))
         }.bind(this))
 
@@ -57,8 +59,10 @@ export default class TodoBox extends React.Component {
 
     addTodo(name, message){
         const id = Date.now()
+        const time = moment().format('h:mm a')
+
         this.setState((state, props) => ({
-            data : [...state.data, {id, name, message, sent: true}]
+            data : [...state.data, {id, name, message, time, sent: true}]
         }))
 
         socket.emit('chat', {

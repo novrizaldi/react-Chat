@@ -26,8 +26,7 @@ function dateConvert(date){
                         </div>
                         <div className="col-md-7 col-sm-7 col-8 comment rounded mb-2">
                               <h4 className="m-0">{props.name}</h4>
-                              <time className="text-white ml-3 msg-time"> {dateConvert(props.message.time)}</time>
-                        {/* <p >{props.message}</p> */}
+                         <span className="text-white ml-3 msg-time"> {dateConvert(props.message.date)} {props.time}</span>
                         <ReactMarkdown className="mb-0 text-white"source={props.message} />
                         </div>
         

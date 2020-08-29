@@ -22,7 +22,7 @@ body{
 .comments-main{
   background: rgb(197, 226, 222);
 }
-.comment time, .comment:hover time,.icon-rocknroll, .like-count {
+.comment time, .comment:hover time, .icon-rocknroll, .like-count {
   -webkit-transition: .25s opacity linear;
   transition: .25s opacity linear;
 }
@@ -54,6 +54,9 @@ body{
 }
 .comments .comment .icon-rocknroll:hover {
   opacity: .5;
+}
+.msg-time {
+  font-size: .75rem;
 }
 .comments .comment time,.comments .comment .like-count,.comments .comment .icon-rocknroll {
   font-size: .75rem;
