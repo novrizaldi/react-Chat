@@ -20,7 +20,7 @@ body{
 }
 
 .comments-main{
-  background: rgb(224, 245, 242);
+  background: rgb(197, 226, 222);
 }
 .comment time, .comment:hover time,.icon-rocknroll, .like-count {
   -webkit-transition: .25s opacity linear;
@@ -31,7 +31,7 @@ body{
 }
 .comments .comment {
   padding: 5px 10px;
-  background: #00AF90;
+  background: #A2C523;
 }
 .comments .comment:hover time{
   opacity: 1;
@@ -82,7 +82,7 @@ body{
   opacity: 1;
 }
 .comment-box-main{
-  background: #CA1D5F;
+  background: #486B00;
 }
 @media (min-width: 320px) and (max-width: 480px){
   .comments .comment h4 {

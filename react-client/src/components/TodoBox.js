@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from 'react'
+import React from 'react'
 import TodoForm from './TodoForm'
 import TodoList from './TodoList'
 import axios from 'axios'
@@ -25,15 +25,17 @@ export default class TodoBox extends React.Component {
         this.loadChat()
 
         socket.on('chat', function (data) {
-            console.log(data)
+            // console.log('DID MOUNT', data)
             this.setState((state, props) => (
                 {data: [...state.data, { ...data, sent: true }]
             }))
         }.bind(this))
 
         socket.on('delete-chat-frontend', function (id) {
-            this.setState((state, props) => ({
-                data: state.data.filter(item => {
+            // console.log('delete din MOUNT', id)
+            this.setState((state, props) => 
+            // console.log('STATE', state) 
+            ({ data: state.data.filter(item => {
                     return item.id !== id.id
                 })
             }))

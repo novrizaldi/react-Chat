@@ -21,7 +21,7 @@ export default class TodoForm extends React.Component {
   
     render() {
       return (
-        <div class="row comment-box-main p-3 rounded-bottom">
+        <div className="row comment-box-main p-3 rounded-bottom">
            <form className="form-inline" onSubmit={this.handleSubmit}>
               <div className="col comment-box">
                   <input type="text" className="form-control mb-2" placeholder="nama" value={this.state.name} onChange={this.handleChangeName}/>

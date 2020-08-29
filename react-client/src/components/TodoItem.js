@@ -17,7 +17,7 @@ function dateConvert(date){
 
  export default function TodoItem(props){
   return (
-      <ul class="p-0">
+      <ul className="p-0">
       <ul className="p-0">
             <li>
                   <div className="row comments mb-2">
@@ -32,9 +32,9 @@ function dateConvert(date){
                         </div>
         
                         {props.sent ? 
-                        <a onClick= {props.hapus}> <span class="glyphicon glyphicon-trash"></span></a> 
+                        <a onClick= {props.hapus}> <span className="glyphicon glyphicon-trash"></span></a> 
                         :
-                        <a onClick= {props.resend}> <span class="glyphicon glyphicon-repeat"></span></a> }
+                        <a onClick= {props.resend}> <span className="glyphicon glyphicon-repeat"></span></a> }
                   </div>
             </li>
       </ul>
